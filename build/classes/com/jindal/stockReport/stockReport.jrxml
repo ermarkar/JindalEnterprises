@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="88852a8b-6e3d-4b63-bbc4-f6cb302efe4a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\RUBAL GARG\\Documents\\NetBeansProjects\\StockReport\\src\\stockreport\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="totalQuantity" class="java.lang.Integer">
+		<fieldDescription><![CDATA[totalQuantity]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.util.HashMap">
+		<fieldDescription><![CDATA[quantity]]></fieldDescription>
+	</field>
+	<field name="designId" class="java.lang.String">
+		<fieldDescription><![CDATA[designId]]></fieldDescription>
+	</field>
+	<field name="totalQuantityPerItem" class="java.util.HashMap">
+		<fieldDescription><![CDATA[totalQuantityPerItem]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<variable name="variable1" class="java.lang.String" calculation="Sum">
+		<variableExpression><![CDATA[$F{quantity}.get(1)]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="397" y="0" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(14)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="451" y="0" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(16)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="243" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(8)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="189" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(6)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="317" y="0" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(11)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="498" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(18)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="295" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(10)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="276d5729-6640-4af7-917b-9399b0af7ca2" x="-17" y="0" width="60" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{designId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="342" y="0" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(12)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="111" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(3)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="373" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(13)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="475" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(17)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="87" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(2)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="220" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(7)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="267" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(9)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="420" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(15)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="550" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{totalQuantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="141" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(4)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="165" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(5)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56716e8a-7604-4050-9bc6-98367dcc8336" x="61" y="1" width="22" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}.get(1)]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

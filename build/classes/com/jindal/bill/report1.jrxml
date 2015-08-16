@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="1044" pageHeight="1188" columnWidth="1004" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ea431bf0-1761-4648-8abb-2febf8e1a047">
+	<property name="ireport.zoom" value="0.9090909090909091"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\RUBAL GARG\\Documents\\NetBeansProjects\\Report\\src\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[address]]></fieldDescription>
+	</field>
+	<field name="amountInWords" class="java.lang.String">
+		<fieldDescription><![CDATA[amountInWords]]></fieldDescription>
+	</field>
+	<field name="city" class="java.lang.String">
+		<fieldDescription><![CDATA[city]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[date]]></fieldDescription>
+	</field>
+	<field name="discountLabel" class="java.lang.String">
+		<fieldDescription><![CDATA[discountLabel]]></fieldDescription>
+	</field>
+	<field name="discountTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[discountTotal]]></fieldDescription>
+	</field>
+	<field name="firmName" class="java.lang.String">
+		<fieldDescription><![CDATA[firmName]]></fieldDescription>
+	</field>
+	<field name="firstName" class="java.lang.String">
+		<fieldDescription><![CDATA[firstName]]></fieldDescription>
+	</field>
+	<field name="fright" class="java.lang.String">
+		<fieldDescription><![CDATA[fright]]></fieldDescription>
+	</field>
+	<field name="grandTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[grandTotal]]></fieldDescription>
+	</field>
+	<field name="invoiceNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[invoiceNumber]]></fieldDescription>
+	</field>
+	<field name="lastName" class="java.lang.String">
+		<fieldDescription><![CDATA[lastName]]></fieldDescription>
+	</field>
+	<field name="mItemList" class="java.util.ArrayList">
+		<fieldDescription><![CDATA[mItemList]]></fieldDescription>
+	</field>
+	<field name="mainTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[mainTotal]]></fieldDescription>
+	</field>
+	<field name="modeOfTransport" class="java.lang.String">
+		<fieldDescription><![CDATA[modeOfTransport]]></fieldDescription>
+	</field>
+	<field name="netTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[netTotal]]></fieldDescription>
+	</field>
+	<field name="roundOffValue" class="java.lang.String">
+		<fieldDescription><![CDATA[roundOffValue]]></fieldDescription>
+	</field>
+	<field name="surchageAmount" class="java.lang.String">
+		<fieldDescription><![CDATA[surchageAmount]]></fieldDescription>
+	</field>
+	<field name="surchareLabel" class="java.lang.String">
+		<fieldDescription><![CDATA[surchareLabel]]></fieldDescription>
+	</field>
+	<field name="taxAmount" class="java.lang.String">
+		<fieldDescription><![CDATA[taxAmount]]></fieldDescription>
+	</field>
+	<field name="taxLabel" class="java.lang.String">
+		<fieldDescription><![CDATA[taxLabel]]></fieldDescription>
+	</field>
+	<field name="tinNo" class="java.lang.String">
+		<fieldDescription><![CDATA[tinNo]]></fieldDescription>
+	</field>
+	<field name="totalNoOfSheets" class="java.lang.String">
+		<fieldDescription><![CDATA[totalNoOfSheets]]></fieldDescription>
+	</field>
+	<field name="vehicleNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[vehicleNumber]]></fieldDescription>
+	</field>
+	<background>
+		<band height="802" splitType="Stretch">
+			<image>
+				<reportElement x="-19" y="-17" width="1041" height="819" uuid="eb59ddd5-5170-496a-bf2b-eae38a288056"/>
+				<imageExpression><![CDATA["C:\\Users\\RUBAL GARG\\Downloads\\FinalBill\\FinalBill.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="283" splitType="Stretch">
+			<textField>
+				<reportElement x="120" y="207" width="100" height="14" uuid="b4afd7b7-2a8a-453f-b8ba-16f3d8413f30"/>
+				<textFieldExpression><![CDATA[$F{firstName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="92" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<subreport>
+				<reportElement x="50" y="0" width="200" height="21" uuid="a4370b31-d537-4355-bdac-228c0255887b"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{mItemList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "report1_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

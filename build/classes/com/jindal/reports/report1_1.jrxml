@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ccd7b6f0-8bda-44a8-86c1-abed7877648a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\RUBAL GARG\\Documents\\NetBeansProjects\\JasperReport\\src\\jasperreport\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="invoiceNumber" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     c_details.`first_name`,
+     c_details.`last_name`,
+     c_details.`firm_name`,
+     c_details.`address`,
+     c_details.`city`,
+     c_details.`tin_no`,
+     c_details.`mobile`,
+     c_details.`phone_office`,
+     c_details.`fax_no`,
+     c_details.`tax`,
+     c_order.`vehicle_number`,
+     order_detail.`design_id`,
+     order_detail.`thickness`,
+     order_detail.`finish`,
+     order_detail.`quantity`,
+     order_detail.`rate`,
+     order_detail.`size`,
+     order_detail.`price`,
+     c_order.`invoice_number`,
+     c_order.`customer_id`,
+     c_order.`order_date`
+FROM
+     `customer_order_detail` c_order INNER JOIN `customer_detail` c_details ON c_order.`customer_id` = c_details.`customer_id`
+     INNER JOIN `order_detail` order_detail ON c_order.`invoice_number` = order_detail.`invoice_number`
+WHERE
+     c_order.invoice_number = $P{invoiceNumber}]]>
+	</queryString>
+	<field name="first_name" class="java.lang.String"/>
+	<field name="last_name" class="java.lang.String"/>
+	<field name="firm_name" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="city" class="java.lang.String"/>
+	<field name="tin_no" class="java.lang.String"/>
+	<field name="mobile" class="java.lang.String"/>
+	<field name="phone_office" class="java.lang.String"/>
+	<field name="fax_no" class="java.lang.String"/>
+	<field name="tax" class="java.lang.Double"/>
+	<field name="vehicle_number" class="java.lang.String"/>
+	<field name="design_id" class="java.lang.String"/>
+	<field name="thickness" class="java.lang.String"/>
+	<field name="finish" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.Long"/>
+	<field name="rate" class="java.math.BigDecimal"/>
+	<field name="size" class="java.lang.String"/>
+	<field name="price" class="java.math.BigDecimal"/>
+	<field name="invoice_number" class="java.lang.Long"/>
+	<field name="customer_id" class="java.lang.Long"/>
+	<field name="order_date" class="java.sql.Date"/>
+	<variable name="Quantity" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{quantity}]]></variableExpression>
+	</variable>
+	<group name="invoice_number">
+		<groupExpression><![CDATA[$F{invoice_number}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="146" y="0" width="239" height="34" uuid="e427cc47-3f6c-45a7-bb45-933626206260"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jindal Enterprises]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="194" y="34" width="137" height="20" uuid="f75f366c-2eca-43eb-b519-f331d0353145"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Panchkula (Haryana)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="78" width="555" height="1" uuid="905dc50d-0aaa-456c-976e-e1a4e5c3b7b7"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="118" splitType="Stretch">
+			<staticText>
+				<reportElement x="377" y="52" width="78" height="15" uuid="52ca5448-9fd2-4c7e-bf54-dc8649681290"/>
+				<text><![CDATA[Order date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="37" width="100" height="15" uuid="53745fe4-e5cc-4144-80e1-96be57e3ccb9"/>
+				<textFieldExpression><![CDATA[$F{invoice_number}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="377" y="37" width="78" height="15" uuid="52ca5448-9fd2-4c7e-bf54-dc8649681290"/>
+				<text><![CDATA[Invoice Number]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="16" y="67" width="39" height="15" uuid="53745fe4-e5cc-4144-80e1-96be57e3ccb9"/>
+				<textFieldExpression><![CDATA[$F{city}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="67" width="100" height="15" uuid="53745fe4-e5cc-4144-80e1-96be57e3ccb9"/>
+				<textFieldExpression><![CDATA[$F{vehicle_number}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="16" y="82" width="39" height="15" uuid="52ca5448-9fd2-4c7e-bf54-dc8649681290"/>
+				<text><![CDATA[Cst No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="16" y="52" width="57" height="15" uuid="53745fe4-e5cc-4144-80e1-96be57e3ccb9"/>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="52" width="74" height="15" uuid="53745fe4-e5cc-4144-80e1-96be57e3ccb9"/>
+				<textFieldExpression><![CDATA[$F{order_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="82" width="57" height="15" uuid="53745fe4-e5cc-4144-80e1-96be57e3ccb9"/>
+				<textFieldExpression><![CDATA[$F{tin_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="377" y="67" width="78" height="15" uuid="52ca5448-9fd2-4c7e-bf54-dc8649681290"/>
+				<text><![CDATA[Vehicle No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="16" y="37" width="69" height="15" uuid="53745fe4-e5cc-4144-80e1-96be57e3ccb9"/>
+				<textFieldExpression><![CDATA[$F{firm_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="191" y="6" width="137" height="31" uuid="3a8f09f2-6e0b-4310-9086-96f9b5585378"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Packing List]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="39" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="aef88f87-01c3-4ef9-8020-5c4a8f914078"/>
+			</line>
+			<staticText>
+				<reportElement x="55" y="18" width="69" height="20" uuid="f43a626a-ce7d-4ea8-8064-4690ee991a5a"/>
+				<textElement textAlignment="Center">
+					<paragraph lineSpacing="AtLeast"/>
+				</textElement>
+				<text><![CDATA[Design No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="308" y="18" width="69" height="20" uuid="f43a626a-ce7d-4ea8-8064-4690ee991a5a"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Finish]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="18" width="69" height="20" uuid="f43a626a-ce7d-4ea8-8064-4690ee991a5a"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="181" y="18" width="69" height="20" uuid="f43a626a-ce7d-4ea8-8064-4690ee991a5a"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Thickness]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement x="424" y="0" width="69" height="13" uuid="de77a576-fb57-47dc-ac72-0fa04cb3517f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="181" y="0" width="69" height="13" uuid="de77a576-fb57-47dc-ac72-0fa04cb3517f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{thickness}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="0" width="69" height="13" uuid="de77a576-fb57-47dc-ac72-0fa04cb3517f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{design_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="308" y="0" width="69" height="13" uuid="de77a576-fb57-47dc-ac72-0fa04cb3517f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{finish}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="42" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="27" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="0" width="151" height="20" uuid="03463ebe-0f00-4943-8206-70154fa5e702"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="0" width="80" height="20" uuid="b32edfc9-b8c2-40dd-b587-d3c68e7b9001"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20" uuid="b69c8519-064c-47df-86f5-2f426ae79f43"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="27" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="102" height="26" uuid="093540af-9774-4c74-b841-83fd5901307d"/>
+				<subreportParameter name="invoiceNumber">
+					<subreportParameterExpression><![CDATA[$P{invoiceNumber}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "PackingList_SubReport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

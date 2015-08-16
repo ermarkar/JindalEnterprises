@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="adaf92a2-3c88-4981-a84a-cfb05733db8f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\RUBAL GARG\\Documents\\NetBeansProjects\\StockReport\\src\\stockreport\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="grandTotal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[grandTotal]]></fieldDescription>
+	</field>
+	<field name="knownStock" class="java.util.ArrayList">
+		<fieldDescription><![CDATA[knownStock]]></fieldDescription>
+	</field>
+	<field name="totalStock" class="java.util.ArrayList">
+		<fieldDescription><![CDATA[totalStock]]></fieldDescription>
+	</field>
+	<field name="unKnownStock" class="java.util.ArrayList">
+		<fieldDescription><![CDATA[unKnownStock]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="206" y="44" width="137" height="20" uuid="f75f366c-2eca-43eb-b519-f331d0353145"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Panchkula (Haryana)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="10" width="239" height="34" uuid="e427cc47-3f6c-45a7-bb45-933626206260"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jindal Enterprises]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="47" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="453" y="11" width="100" height="20" uuid="4a3a6513-086b-4359-bead-29f8ac2520fd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="231" y="10" width="94" height="20" uuid="de9acde9-bb9f-49ec-9d15-8ff8be001535"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stock Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="11" width="78" height="20" uuid="de9acde9-bb9f-49ec-9d15-8ff8be001535"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Finished Goods]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="33" width="100" height="13" uuid="9367598f-4c10-469c-bc40-d5b2a796432a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Quantity]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="445" y="34" width="100" height="13" uuid="1e15abc2-b1e5-4b8d-8259-201613509032"/>
+				<textFieldExpression><![CDATA[$F{grandTotal}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-20" y="32" width="600" height="1" uuid="21844640-5003-4bf4-b0ac-992647054479"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<line>
+				<reportElement x="-23" y="30" width="596" height="2" uuid="f418bf6a-2763-4b8c-a9fa-bf27664e7bfe"/>
+			</line>
+			<staticText>
+				<reportElement x="367" y="2" width="75" height="15" uuid="199bda39-f8ff-44e2-bb3f-922178f14b1c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[<----1.0---->]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="2" width="75" height="15" uuid="199bda39-f8ff-44e2-bb3f-922178f14b1c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[<----1.5---->]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="522" y="2" width="51" height="16" uuid="199bda39-f8ff-44e2-bb3f-922178f14b1c"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Total Qty.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="57" y="2" width="75" height="15" uuid="199bda39-f8ff-44e2-bb3f-922178f14b1c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[<----0.54---->]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="2" width="75" height="15" uuid="199bda39-f8ff-44e2-bb3f-922178f14b1c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[<----0.7---->]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="2" width="75" height="15" uuid="199bda39-f8ff-44e2-bb3f-922178f14b1c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[<----0.8---->]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="2" width="75" height="15" uuid="199bda39-f8ff-44e2-bb3f-922178f14b1c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[<----0.6---->]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="452" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[HGF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[MTF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[HGF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="499" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[SDF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[HGF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[MTF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[HGF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[SDF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[SDF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="112" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[SDF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="476" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[MTF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[HGF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[SDF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="421" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[SDF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="398" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[MTF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="244" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[MTF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="221" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[HGF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="18" width="22" height="14" uuid="322d11b4-16f9-4f25-80a8-5b407be6558e"/>
+				<text><![CDATA[MTF]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<subreport>
+				<reportElement x="-15" y="0" width="109" height="13" uuid="534b9d48-0c6b-4e7c-ae57-7eb884a7e472"/>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{knownStock})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "stockReport.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement x="-20" y="-31" width="600" height="2" uuid="f418bf6a-2763-4b8c-a9fa-bf27664e7bfe"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="519" y="0" width="40" height="16" uuid="b69c8519-064c-47df-86f5-2f426ae79f43"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="439" y="0" width="80" height="16" uuid="b32edfc9-b8c2-40dd-b587-d3c68e7b9001"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="56" splitType="Stretch">
+			<subreport>
+				<reportElement x="68" y="32" width="200" height="23" uuid="b644359e-27e1-4d91-a7c3-ae55ca2de5da"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{unKnownStock})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "unKnownReport.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="38" y="0" width="150" height="10" uuid="215be9aa-8805-4e12-b899-960c08a0499c"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{totalStock})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "TotalQuantityPerFinishReport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

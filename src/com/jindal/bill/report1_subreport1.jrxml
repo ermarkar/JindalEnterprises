@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1_subreport1" language="groovy" pageWidth="1044" pageHeight="802" columnWidth="1044" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3b1b6df9-cd16-4049-a341-5d4116fa9c65">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="itemName" class="java.lang.String">
+		<fieldDescription><![CDATA[itemName]]></fieldDescription>
+	</field>
+	<field name="noOfSheets" class="java.lang.String">
+		<fieldDescription><![CDATA[noOfSheets]]></fieldDescription>
+	</field>
+	<field name="ratePerSheet" class="java.lang.String">
+		<fieldDescription><![CDATA[ratePerSheet]]></fieldDescription>
+	</field>
+	<field name="serailNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[serailNumber]]></fieldDescription>
+	</field>
+	<field name="totalAmount" class="java.lang.String">
+		<fieldDescription><![CDATA[totalAmount]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="1" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<textField>
+				<reportElement x="199" y="2" width="109" height="16" uuid="8e43e3cf-fd2c-4e98-8284-c8d6c62892bb"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{itemName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="32" y="1" width="87" height="17" uuid="b5b4114d-1abd-4728-a669-4561e651de61"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serailNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="740" y="0" width="91" height="17" uuid="53ba36fd-f43f-4172-961c-b0a77064690a"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="377" y="0" width="53" height="17" uuid="36668489-fcb3-4ac8-931a-cda133405f45"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noOfSheets}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="564" y="1" width="101" height="17" uuid="10b2236b-5143-4fe7-a123-041ba135f5d0"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ratePerSheet}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

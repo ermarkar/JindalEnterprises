@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PackingList_SubReport" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="deaba7a2-f6f5-4227-acc0-9249b433f7e4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="invoiceNumber" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     order_detail.`invoice_number`,
+     order_detail.`finish`,
+     order_detail.`thickness`,
+     sum(quantity)
+FROM
+     `order_detail` order_detail
+WHERE
+     invoice_number = $P{invoiceNumber}
+GROUP BY
+     finish]]>
+	</queryString>
+	<field name="invoice_number" class="java.lang.Long"/>
+	<field name="finish" class="java.lang.String"/>
+	<field name="thickness" class="java.lang.String"/>
+	<field name="sum(quantity)" class="java.math.BigDecimal"/>
+	<group name="invoice_number">
+		<groupExpression><![CDATA[$F{invoice_number}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="b16cc56d-8b7f-45ba-b308-a181be6e77c9" x="169" y="59" width="231" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Sheet sold based on finish]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="14" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f43a626a-ce7d-4ea8-8064-4690ee991a5a" x="238" y="0" width="69" height="13"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Finish]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f43a626a-ce7d-4ea8-8064-4690ee991a5a" x="351" y="0" width="84" height="13"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f43a626a-ce7d-4ea8-8064-4690ee991a5a" x="119" y="0" width="69" height="13"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Thickness]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement uuid="de77a576-fb57-47dc-ac72-0fa04cb3517f" x="238" y="0" width="69" height="13"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{finish}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="de77a576-fb57-47dc-ac72-0fa04cb3517f" x="119" y="0" width="69" height="13"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{thickness}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="de77a576-fb57-47dc-ac72-0fa04cb3517f" x="351" y="0" width="84" height="13"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sum(quantity)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
